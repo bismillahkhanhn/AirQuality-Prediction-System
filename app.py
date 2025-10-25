@@ -1,5 +1,4 @@
 
-%%writefile /content/app.py
 
 # Import Libraries
 import ipywidgets as widgets
