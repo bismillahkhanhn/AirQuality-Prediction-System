@@ -1,3 +1,4 @@
+!pip install streamlit pyngrok joblib
 
 
 # Import Libraries
@@ -8,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load trained Linear Regression model
-lr_model = joblib.load("../models/linear_regression_pm25.pkl")
+lr_model = joblib.load("linear_regression_pm25.pkl")
 
 # --- UI Components --- #
 st_title = widgets.HTML("<h2 style='color:green;'>🌬️ PM2.5 Prediction App (Linear Regression)</h2>")
