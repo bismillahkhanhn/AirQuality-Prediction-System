@@ -2,12 +2,12 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Load trained model
+# Load trained model (make sure the .pkl is in the same folder)
 lr_model = joblib.load("linear_regression_pm25.pkl")
 
 st.title("🌬️ PM2.5 Prediction App (Linear Regression)")
 
-# Sliders for input
+# Sliders for inputs
 PM10 = st.slider("PM10", 0, 600, 100)
 NO = st.slider("NO", 0, 500, 50)
 NO2 = st.slider("NO2", 0, 500, 30)
@@ -24,7 +24,7 @@ if st.button("Predict PM2.5"):
     features = np.array([[PM10, NO, NO2, NOx, NH3, CO, SO2, O3, Benzene, Toluene, Xylene]])
     prediction = lr_model.predict(features)[0]
 
-    # AQI Category function
+    # Convert PM2.5 to AQI category
     def pm25_to_aqi_category(pm):
         if pm <= 12: return "Good"
         elif pm <= 35.4: return "Moderate"
@@ -34,6 +34,6 @@ if st.button("Predict PM2.5"):
         else: return "Hazardous"
 
     aqi_cat = pm25_to_aqi_category(prediction)
-    
+
     st.success(f"✅ Predicted PM2.5: {prediction:.2f}")
     st.info(f"🌡️ AQI Category: {aqi_cat}")
