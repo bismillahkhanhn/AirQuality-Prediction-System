@@ -45,7 +45,7 @@ Xylene = st.number_input("Xylene (C₈H₁₀ µg/m³)", value=3.0)
 # -------------------------
 # Prediction
 # -------------------------
-if st.button("Predict Air Quality", type="primary"):
+if st.button(" Predict Air Quality", type="primary"):
     if not city.strip():
         st.error("❌ Please enter a valid city name!")
         st.stop()
@@ -151,3 +151,35 @@ with st.expander("📏 View Pollutant Reference Ranges"):
 | Toluene | 0.0 – 50.0 | µg/m³ |
 | Xylene | 0.0 – 50.0 | µg/m³ |
 """)
+# -------------------------
+# Custom Page Styling (Eco Theme)
+# -------------------------
+
+   # -------------------------
+# Simple Green Theme (Beginner Friendly)
+# -------------------------
+st.markdown("""
+    <style>
+    /* White background */
+    [data-testid="stAppViewContainer"] {
+        background-color: white;
+        color: #1b5e20;
+    }
+
+    /* Green titles and headings */
+    h1, h2, h3, h4 {
+        color: #1b5e20 !important;
+    }
+
+    /* Green button */
+    div.stButton > button:first-child {
+        background-color: #2e7d32;
+        color: white;
+        border-radius: 6px;
+        border: none;
+    }
+    div.stButton > button:first-child:hover {
+        background-color: #43a047;
+    }
+    </style>
+""", unsafe_allow_html=True)
