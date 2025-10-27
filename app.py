@@ -45,7 +45,7 @@ Xylene = st.number_input("Xylene (C₈H₁₀ µg/m³)", value=3.0)
 # -------------------------
 # Prediction
 # -------------------------
-if st.button("🔍 Predict Air Quality", type="primary"):
+if st.button("Predict Air Quality", type="primary"):
     if not city.strip():
         st.error("❌ Please enter a valid city name!")
         st.stop()
