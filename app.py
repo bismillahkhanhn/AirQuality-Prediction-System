@@ -19,7 +19,7 @@ st.title("Air Quality Prediction System")
 # -------------------------
 # User Inputs
 # -------------------------
-city = st.text_input(" Enter City Name", "Delhi")
+city = st.text_input(" Enter City Name")
 
 st.subheader(" Particulate Matter")
 PM10 = st.number_input("PM10 (Coarse Particles µg/m³)", value=100.0)
